@@ -18,7 +18,7 @@ output_dir="/home/abportillo/github_repo/Single_cell/fastq"
 mkdir -p "$output_dir"
 
 # SRA IDs
-sra_ids ="/home/abportillo/github_repo/Single_cell/SRR_Acc_List.txt"
+sra_ids="/home/abportillo/github_repo/Single_cell/SRR_Acc_List.txt"
 
 # Loop through and download each
 while read -r sra; do
