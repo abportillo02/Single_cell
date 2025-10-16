@@ -14,11 +14,11 @@ source /home/abportillo/.bashrc
 conda activate mamba_abner_BC
 
 # Output directory
-output_dir="/home/abportillo/github_repo/Single_cell/fastq"
+output_dir="/home/abportillo/github_repo/single-cell/fastq"
 mkdir -p "$output_dir"
 
 # SRA IDs
-sra_ids="/home/abportillo/github_repo/Single_cell/SRR_Acc_List.txt"
+sra_ids="/home/abportillo/github_repo/single-cell/SRR_Acc_List.txt"
 
 # Loop through and download each
 while read -r sra; do
