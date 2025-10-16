@@ -10,7 +10,7 @@
 #SBATCH --time=48:00:00
 
 # Load Conda environment
-source source /home/abportillo/.bashrc
+source /home/abportillo/.bashrc
 conda activate mamba_abner_BC
 
 # Output directory
@@ -18,12 +18,13 @@ output_dir="/home/abportillo/github_repo/Single_cell/fastq"
 mkdir -p "$output_dir"
 
 # SRA IDs
-sra_ids = "/home/abportillo/github_repo/Single_cell/SRR_Acc_List.txt"
+sra_ids ="/home/abportillo/github_repo/Single_cell/SRR_Acc_List.txt"
 
 # Loop through and download each
-for sra in "${sra_ids}"; do
+while read -r sra; do
   echo "Downloading $sra..."
   fasterq-dump "$sra" -O "$output_dir" -e 4
-done
+done < "$sra_ids"
+
 
 echo "All downloads complete."
